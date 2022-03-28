@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <title>Snaken</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <script>
+        window.onload = function FatEnding() {
+            function Achieve(number, text) {
+                document.querySelector('#achievement>img').setAttribute('src', "visual/endings/" + number + ".png")
+                document.querySelector('#achievement ab').innerHTML = number + '. ' + text
+                let achievement = document.querySelector('#achievement')
+                achievement.classList.add('achieve')
+                achievement.classList.remove('hidden')
+                setTimeout(() => {
+                    achievement.classList.remove('achieve')
+                    achievement.classList.add('hidden')
+                }, 10000);
+            }
+            Achieve(1, 'Fat Ending')
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id='achievement' class='hidden'><img src="visual/endings/6.png" alt="">
+        <at>
+            <atf>
+                <ah>Открыта новая концовка!<ab>1. Fat Ending</ab>
+            </atf>
+        </at>
+    </div>
+    <div style='pointer-events: none;'>
+        <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1&enablejsapi=1?showinfo=0"
+            title="YouTube video player" frameborder="0" style='position: absolute; top:0; left: 0; z-index:5;'
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; controls;"
+            allowfullscreen></iframe>
+    </div>
+</body>
+
+</html>

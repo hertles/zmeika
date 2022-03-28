@@ -1,0 +1,936 @@
+
+html {
+    box-sizing: border-box;
+    font-size: 1px !important;
+}
+
+body {
+    font-family: 'Archive';
+    font-size: 20px;
+    background-color: #000000;
+    color: #F9F9F9;
+    margin: 10px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+table td{
+    width:20px;
+    height:20px;
+    outline: 1px solid rgb(58, 58, 58);
+    position: relative;
+    z-index: 2;
+}
+
+.hiddencell{
+    outline: 0px solid rgb(58, 58, 58)!important;
+    
+}
+.hiddenblock{
+    background-color: #000!important;
+}
+.snake, .enemy, .friend, #redcounter>span{
+    background-color: firebrick;
+    z-index: 1;
+}
+.redimportant{
+  background-color: firebrick!important;
+}
+.redtext, redtext{
+  color:rgb(255, 110, 110);
+}
+yellowtext{
+  color:rgb(255, 209, 110);
+}
+.greentext, greentext{
+  color:rgb(122, 252, 62);
+}
+rainbowtext{
+  animation: 1s rainbowtext linear forwards infinite;
+}
+.green{
+    background-color: rgb(60, 197, 60);
+}
+.black{
+  background-color: #000!important;
+}
+.deadsnake{
+    background-color: rgb(163, 163, 163);
+}
+.block{
+    background-color: rgb(88, 88, 88);;
+}
+.invblock{
+    background-color: rgb(87, 12, 12);
+    
+}
+.food, .fakefood, .traitorfood, #bluecounter>span, .friendfood{
+    background-color: rgb(5, 101, 211);
+}
+.foodsnake{
+    background-color: rgb(5, 101, 211)!important
+}
+.extrafood, #goldencounter>span{
+    background-color: rgb(173, 132, 28);
+}
+.redsquare{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top:0;
+  left: 0;
+  z-index:2;
+  background-color: firebrick;
+  
+  outline: 1px solid rgb(58, 58, 58);
+}
+.redsquare9{
+  position: fixed;
+  width: 170px;
+  height: 170px;
+  transform:translate(-50%,-50%);
+}
+.transparent{
+  background-color: transparent;
+  outline: 1px solid transparent!important;
+}
+.glass{
+  position:fixed;
+  width: 1000px;
+  height: 1000px;
+  transform: translate(-50%,-50%);
+  z-index:1000;
+}
+.glass1{
+  background-image: url('visual/glass1.png')
+}
+.glass2{
+  background-image: url('visual/glass2.png')
+}
+#noise{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 50%;
+}
+
+
+
+
+
+.counterouter{
+    position: fixed;
+    top: 10px;
+    right: 0px;
+    z-index: 3;
+}
+.counter{
+  border-radius: 5px;
+    margin: 10px;
+    background-color: rgb(88, 88, 88);
+    border: 2px solid #444400;
+    width: 40px;
+    text-align: center;
+}
+.counter>span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+#cheat{
+  font-size: 10px;
+  display: flex;
+  align-content: space-between;
+}
+greybg{
+  border-radius: 5px;
+  background-color: rgb(88, 88, 88);
+  border: 2px solid #444400;
+  margin-left: 15px;
+  padding: 7px;
+}
+
+letter{
+  width: 13px;
+  height: 15px;
+}
+
+goldenspan{
+    background-color: rgb(173, 132, 28);
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+bluespan{
+  background-color: rgb(5, 101, 211);
+  transform: translate(0%,7%);
+  margin-left: 7px;
+  margin-right: 7px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.message{
+    position: fixed; 
+    left: 50vw; 
+    top: 50vh; 
+    transform: translate(-50%,-50%); 
+    border-radius: 5px;
+    background-color: #ffffff50; 
+    z-index: 4;
+    width: 282px; 
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#godmessage, #escmessage, #entermessage{
+    left: 50vw; 
+    top: 8vh; 
+    transform: translate(-50%,0);
+}
+.message>text, .button>text{
+    vertical-align: middle;
+    padding: 20px;
+}
+#friendmessage{
+    left: 15vw;
+}
+#devilmessage{
+    top: 88vh;
+}
+#televisor {
+  position: fixed;
+  z-index: 7;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 56%;
+  pointer-events: none;
+  transform: scale(1.5);
+}
+.button{
+  border-radius: 5px;
+  user-select: none;
+    display: block;
+    background-color: #ffffff70;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #ff000070;
+}
+#chooseouter{
+    width:100%;
+    
+}
+#choose{
+  z-index: 200;
+}
+#bluegrad{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: 3; 
+    pointer-events: none; 
+    opacity: 0; 
+    background-image:linear-gradient(to bottom, rgba(32, 32, 78, 0.5), rgb(39, 39, 83))
+}
+.gif{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: 4; 
+    pointer-events: none; 
+    opacity: 40%;
+}
+#freedomgif{
+    position: absolute;
+    top: 50px;
+    left: 220px;
+    z-index:4
+}
+#birds{
+    filter:sepia(1)saturate(1);
+    opacity: 0%;
+}
+#confetti{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 4;
+    width: 100vw;
+    height:auto;
+}
+#tripgif {
+    position: fixed;
+    display: block;
+    top: -500px;
+    left: 0px;
+    z-index: 0;
+    width: 150vw;
+    height: 150vw;
+    opacity: 80%;
+    pointer-events: none;
+}
+.birdsshow{
+    display: block;
+    animation: 3s
+}
+.show{
+    animation: 8s opacitychange linear forwards;
+}
+.hidden{
+    display: none!important;
+}
+.godhand{
+    position: absolute;
+    filter: invert(1);
+    z-index: 999;
+    pointer-events: none;
+    
+}
+#godhandouter{
+    top: -200px;
+    left: -200px;
+    
+}
+.godhandforward{
+    animation: 4s godhandforward ease-in-out;
+}
+.godhandshaking{
+    animation: 8s godhandshaking ease-in-out;
+    animation-iteration-count: infinite;
+}
+#titres{
+    position: absolute;
+    width: 0px;
+    height: auto;
+    font-size: 15px;
+    z-index:20;
+}
+.titresdown{
+    animation: 180s titresdown linear forwards;
+}
+.eaten{
+    animation: 1s eaten linear forwards;
+}
+.not_a_drug{
+    animation: 2s rainbow linear forwards;
+    animation-iteration-count: infinite;
+}
+#cave{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+.satan{
+  position: fixed;
+  display: block;
+  bottom: 0;
+  right:30px;
+  z-index: 6;
+}
+#satan0 {
+  bottom: 30vh;
+  left: 44vw;
+  width: 200px;
+}
+.satanscale{
+  animation: 10s satanscale linear forwards;
+}
+.slidefromdown{
+  animation: 2s slidefromdown linear forwards;
+}
+#achievement{
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid rgb(255, 241, 197);
+  z-index:200;
+  position: fixed;
+  bottom:3px;
+  right:3px;
+  width:300px;
+  height:100px;
+  background-color: #161600;
+}
+.achieve{
+  animation: 10s achieve linear forwards;
+}
+#achievement>img{
+  border: 2px solid rgb(255, 241, 197);
+  border-radius: 5px;
+  display: inline-block;
+  margin: 20px;
+  width: 60px;
+  height: 60px;
+}
+at{
+  display: inline-block;
+  margin: 20px;
+  margin-left: 0px;
+  width: 200px
+}
+atf{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+ah, ab{
+  
+  display: block;
+  color:rgb(255, 241, 197);
+  font-size: 12px;
+}
+ab{
+  margin-top: 10px;
+  color:rgb(255, 255, 255);
+  font-size: 16px;
+}
+.opacity_hz{
+  animation: 3s opacity_hz linear forwards;
+}
+.opacity_zh{
+  animation: 3s opacity_zh linear forwards;
+}
+
+
+
+.Profile {
+  border-radius: 5px;
+  display: flex;
+  position: fixed;
+  margin: 2vw;
+  width: 21vw;
+  height: 89vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #666666;
+  border: 2px solid rgb(255, 241, 197);
+  flex-wrap: wrap;
+  flex-direction: row;
+  color:white;
+}
+.endingcard{
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  width: 5vw;
+  margin: 0.5vw;
+  border: 2px solid rgb(255, 241, 197);
+}
+.opened:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.endingsOuter, .nameOuter {
+  border-radius: 5px;
+    display: flex;
+    width: 20vw;
+    margin: 1vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.endingsInner{
+  display: inline;
+  width: auto;
+}
+.recordOuter{
+  margin: 1vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  transform: translate(-1%,0)
+}
+.nameOuter, .recordOuter{
+  border-radius: 5px;
+  text-align: center;
+  margin: 2vw 0;
+  height: initial;
+}
+
+.recordOuter span{
+  margin-left: 5px;
+}
+#exit{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 10px;
+  padding: 3px;
+  margin: 10px;
+  z-index: 9999992;
+  cursor: pointer;
+}
+
+@keyframes opacity_hz{
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+@keyframes opacity_zh{
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+@keyframes satanscale{
+  0%{
+    transform:scale(1);
+    opacity: 100%;
+  }
+  50%{
+    opacity: 100%;
+  }
+  100%{
+    transform:scale(2);
+    opacity: 0%;
+  }
+}
+@keyframes achieve{
+  0%{
+    bottom: -103px;
+  }
+  7%{
+    bottom: 3px;
+  }
+  93%{
+    bottom: 3px;
+  }
+  100%{
+    bottom: -103px;
+  }
+}
+@keyframes slidefromdown{
+  0% {
+    bottom: -50%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes opacitychange{
+    0% {
+        opacity: 0%;
+    }
+    30% {
+        opacity: 60%
+    }
+    60% {
+        opacity: 60%
+    }
+    100% {
+        opacity: 0%
+    }
+}
+@keyframes godhandforward{
+    0% {
+        top: -500px;
+        left: -500px;
+        transform:rotate3d(0);
+        
+    }
+    100% {
+        top: -200px;
+        left: -200px;
+        transform:rotate3d(10deg);
+    }
+}
+@keyframes godhandshaking{
+    0% {
+        margin-top: 0px;
+        margin-left: 0px;
+        transform:rotate(0deg)
+        
+    }
+    25% {
+        margin-top: 10px;
+        margin-left: 20px;
+        transform:rotate(-1deg)
+    }
+    50% {
+        margin-top: -10px;
+        margin-left: 0px;
+        transform:rotate(1deg)
+    }
+    75% {
+        margin-top: 13px;
+        margin-left: -10px;
+        transform:rotate(-1deg)
+    }
+    100% {
+        margin-top: 0px;
+        margin-left: 0px;
+        transform:rotate(0deg)
+    }
+}
+@keyframes titresdown{
+    0%{
+        top: 700px;
+    }
+    100%{
+        top: -13000px;
+    }
+}
+@keyframes eaten{
+    0%{
+        transform:scale(5)rotate(30deg);
+        color:rgb(173, 132, 28);
+    }
+    100%{
+        transform:scale(1);
+        color: white;
+    }
+}
+@keyframes hue {
+  0% {
+    filter:hue-rotate(0)brightness(0.7)
+  }
+  50% {
+    filter:hue-rotate(180deg)brightness(0.5)
+  }
+  100% {
+    filter:hue-rotate(360deg)brightness(0.7)
+  }
+}
+@keyframes rainbow {
+    0% {
+      background-color: #e87d7d;
+    }
+    2% {
+      background-color: #e88a7d;
+    }
+    4% {
+      background-color: #e8977d;
+    }
+    6% {
+      background-color: #e8a47d;
+    }
+    8% {
+      background-color: #e8b07d;
+    }
+    10% {
+      background-color: #e8bd7d;
+    }
+    12% {
+      background-color: #e8ca7d;
+    }
+    14% {
+      background-color: #e8d77d;
+    }
+    16% {
+      background-color: #e8e47d;
+    }
+    18% {
+      background-color: #dfe87d;
+    }
+    20% {
+      background-color: #d3e87d;
+    }
+    22% {
+      background-color: #c6e87d;
+    }
+    24% {
+      background-color: #b9e87d;
+    }
+    26% {
+      background-color: #ace87d;
+    }
+    28% {
+      background-color: #9fe87d;
+    }
+    30% {
+      background-color: #92e87d;
+    }
+    32% {
+      background-color: #86e87d;
+    }
+    34% {
+      background-color: #7de881;
+    }
+    36% {
+      background-color: #7de88e;
+    }
+    38% {
+      background-color: #7de89b;
+    }
+    40% {
+      background-color: #7de8a8;
+    }
+    42% {
+      background-color: #7de8b5;
+    }
+    44% {
+      background-color: #7de8c1;
+    }
+    46% {
+      background-color: #7de8ce;
+    }
+    48% {
+      background-color: #7de8db;
+    }
+    50% {
+      background-color: #7de8e8;
+    }
+    52% {
+      background-color: #7ddbe8;
+    }
+    54% {
+      background-color: #7dcee8;
+    }
+    56% {
+      background-color: #7dc1e8;
+    }
+    58% {
+      background-color: #7db5e8;
+    }
+    60% {
+      background-color: #7da8e8;
+    }
+    62% {
+      background-color: #7d9be8;
+    }
+    64% {
+      background-color: #7d8ee8;
+    }
+    66% {
+      background-color: #7d81e8;
+    }
+    68% {
+      background-color: #867de8;
+    }
+    70% {
+      background-color: #927de8;
+    }
+    72% {
+      background-color: #9f7de8;
+    }
+    74% {
+      background-color: #ac7de8;
+    }
+    76% {
+      background-color: #b97de8;
+    }
+    78% {
+      background-color: #c67de8;
+    }
+    80% {
+      background-color: #d37de8;
+    }
+    82% {
+      background-color: #df7de8;
+    }
+    84% {
+      background-color: #e87de4;
+    }
+    86% {
+      background-color: #e87dd7;
+    }
+    88% {
+      background-color: #e87dca;
+    }
+    90% {
+      background-color: #e87dbd;
+    }
+    92% {
+      background-color: #e87db0;
+    }
+    94% {
+      background-color: #e87da4;
+    }
+    96% {
+      background-color: #e87d97;
+    }
+    98% {
+      background-color: #e87d8a;
+    }
+    100% {
+      background-color: #e87d7d;
+    }
+  }
+  @keyframes rainbowtext {
+    0% {
+      color: #e87d7d;
+    }
+    2% {
+      color: #e88a7d;
+    }
+    4% {
+      color: #e8977d;
+    }
+    6% {
+      color: #e8a47d;
+    }
+    8% {
+      color: #e8b07d;
+    }
+    10% {
+      color: #e8bd7d;
+    }
+    12% {
+      color: #e8ca7d;
+    }
+    14% {
+      color: #e8d77d;
+    }
+    16% {
+      color: #e8e47d;
+    }
+    18% {
+      color: #dfe87d;
+    }
+    20% {
+      color: #d3e87d;
+    }
+    22% {
+      color: #c6e87d;
+    }
+    24% {
+      color: #b9e87d;
+    }
+    26% {
+      color: #ace87d;
+    }
+    28% {
+      color: #9fe87d;
+    }
+    30% {
+      color: #92e87d;
+    }
+    32% {
+      color: #86e87d;
+    }
+    34% {
+      color: #7de881;
+    }
+    36% {
+      color: #7de88e;
+    }
+    38% {
+      color: #7de89b;
+    }
+    40% {
+      color: #7de8a8;
+    }
+    42% {
+      color: #7de8b5;
+    }
+    44% {
+      color: #7de8c1;
+    }
+    46% {
+      color: #7de8ce;
+    }
+    48% {
+      color: #7de8db;
+    }
+    50% {
+      color: #7de8e8;
+    }
+    52% {
+      color: #7ddbe8;
+    }
+    54% {
+      color: #7dcee8;
+    }
+    56% {
+      color: #7dc1e8;
+    }
+    58% {
+      color: #7db5e8;
+    }
+    60% {
+      color: #7da8e8;
+    }
+    62% {
+      color: #7d9be8;
+    }
+    64% {
+      color: #7d8ee8;
+    }
+    66% {
+      color: #7d81e8;
+    }
+    68% {
+      color: #867de8;
+    }
+    70% {
+      color: #927de8;
+    }
+    72% {
+      color: #9f7de8;
+    }
+    74% {
+      color: #ac7de8;
+    }
+    76% {
+      color: #b97de8;
+    }
+    78% {
+      color: #c67de8;
+    }
+    80% {
+      color: #d37de8;
+    }
+    82% {
+      color: #df7de8;
+    }
+    84% {
+      color: #e87de4;
+    }
+    86% {
+      color: #e87dd7;
+    }
+    88% {
+      color: #e87dca;
+    }
+    90% {
+      color: #e87dbd;
+    }
+    92% {
+      color: #e87db0;
+    }
+    94% {
+      color: #e87da4;
+    }
+    96% {
+      color: #e87d97;
+    }
+    98% {
+      color: #e87d8a;
+    }
+    100% {
+      color: #e87d7d;
+    }
+  }

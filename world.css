@@ -1,0 +1,93 @@
+body{
+    color: rgb(0, 0, 0);
+}
+.clone{
+    background-color: rgb(148, 30, 30);
+}
+.clone.snake, .clone.friend{
+    background-color: rgb(92, 18, 18);
+}
+.message{
+    background-color: #ffffff90;
+}
+.button{
+    background-color: #ffffff;
+}
+.button:hover{
+    background-color: rgb(178, 34, 34);
+}
+table td{
+    outline: none;
+    background-color: transparent;
+}
+.block{
+    background-color: transparent;
+}
+.satan {
+    position: fixed;
+    display: block;
+    bottom: -32px;
+    right: 224px;
+    z-index: 6;
+    filter: drop-shadow(2px -2px 1px white);
+}
+#cabinetlights{
+    z-index: 5;
+    transform: rotate(90deg);
+    left: 50%;
+    filter: grayscale(1)
+}
+#rightmessage {
+    left: auto;
+    top: 87vh;
+    right: 21vw;
+    z-index: 6;
+}
+#snakemessage {
+    left: 39vw;
+    top: 87vh;
+    z-index: 6;
+}
+#test{
+    backdrop-filter: grayscale(1)blur(3px);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index:20;
+}
+#test>img {
+    filter: drop-shadow(1px 0px 6px white);
+}
+
+
+.background, .mouseblock{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+.mouseblock{
+    z-index: 100;
+}
+#friendreplic{
+    z-index: 220;
+}
+#woodwindow{
+    z-index: 5;
+}
+.working{
+    animation: 0.5s working linear forwards infinite;
+}
+@keyframes working {
+    0%{
+        opacity: 0%
+    }
+    50%{
+        opacity: 100%
+    }
+    100%{
+        opacity: 0%
+    }
+}
